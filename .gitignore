@@ -3,6 +3,11 @@ node_modules
 .pnp
 .pnp.js
 
+dist
+.vscode
+.DS_Store
+*.log
+
 # Testing
 coverage
 
