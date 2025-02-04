@@ -1,0 +1,273 @@
+body {
+  color: var(--title-color);
+  background: var(--background-img);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  margin: 0;
+  min-width: 320px;
+  -webkit-tap-highlight-color: var(--tap-highlight-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+* {
+  font-family: Geist, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: rgb(18, 18, 18);
+  --border-color: rgb(39, 39, 39);
+  --button-background-color: rgb(35, 35, 35);
+  --title-color: rgb(255, 255, 255);
+  --text-color: rgba(255, 255, 255, 0.6);
+  --button-text-color: rgba(255, 255, 255, 0.5);
+  --button-hover: rgb(51, 51, 51);
+  --header-background-color: rgba(18, 18, 18, 0.7);
+  --blur-button-background-color: rgb(35, 35, 35, 0.2);
+  --social-icon-color: rgb(131, 131, 131);
+  --background-img: linear-gradient(
+    to bottom right,
+    rgb(23, 23, 26),
+    rgb(4, 4, 4)
+  );
+  --header-height: 90px;
+  --tap-highlight-color: rgba(255, 255, 255, 0.2);
+  --hover-gradient: linear-gradient(
+    90deg,
+    rgba(36, 44, 88, 0.11),
+    rgba(0, 98, 255, 0.11)
+  );
+  --radial-hover-gradient: radial-gradient(
+    circle,
+    rgba(0, 98, 255, 0.11) 0%,
+    rgba(25, 25, 35, 0.11) 100%
+  );
+  --button-radial-hover-gradient: radial-gradient(
+    circle,
+    rgba(0, 98, 255, 0.11) 0%,
+    rgba(36, 44, 88, 0.11) 100%
+  );
+  --header-hover-gradient: radial-gradient(
+    circle,
+    rgba(2, 49, 124, 0.11) 0%,
+    rgba(36, 44, 88, 0.11) 60%
+  );
+  --footer-hover-gradient: radial-gradient(
+    circle,
+    rgba(3, 64, 163, 0.11) 0%,
+    rgba(36, 44, 88, 0.11) 100%
+  );
+}
+
+.light-theme {
+  --background-color: rgb(248, 248, 248);
+  --border-color: rgb(158, 158, 182);
+  --button-background-color: rgb(230, 230, 240);
+  --title-color: rgb(38, 38, 38);
+  --text-color: rgba(0, 0, 0, 0.85);
+  --button-text-color: rgba(0, 0, 0, 0.75);
+  --button-hover: rgb(245, 245, 255);
+  --header-background-color: rgba(211, 210, 210, 0.5);
+  --blur-button-background-color: rgb(211, 210, 210, 0.2);
+  --social-icon-color: rgb(64, 64, 64);
+  --background-img: linear-gradient(
+    to bottom right,
+    rgb(195, 202, 236),
+    rgb(216, 216, 216)
+  );
+  --header-height: 90px;
+  --tap-highlight-color: rgba(64, 64, 64, 0.15);
+  --hover-gradient: linear-gradient(
+    90deg,
+    rgba(192, 200, 240, 0.2),
+    rgba(0, 93, 223, 0.2)
+  );
+  --radial-hover-gradient: radial-gradient(
+    circle,
+    rgba(0, 93, 223, 0.1),
+    rgba(192, 200, 240, 0.2)
+  );
+  --button-radial-hover-gradient: radial-gradient(
+    circle,
+    rgba(51, 105, 253, 0.1),
+    rgba(165, 179, 248, 0.4)
+  );
+  --footer-hover-gradient: radial-gradient(
+    circle,
+    rgba(0, 93, 223, 0.1),
+    rgba(192, 200, 240, 0.2)
+  );
+  --header-hover-gradient: radial-gradient(
+    circle,
+    rgba(0, 93, 223, 0.1) 0%,
+    rgba(192, 200, 240, 0.2) 100%
+  );
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: scale(0.95);
+  transition: opacity 0.5s, filter 0.5s,
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: opacity 0.5s, filter 0.5s,
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hidden {
+    transition: opacity 0.5s, filter 0.5s,
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 112px 0px 0px 0px;
+    background-attachment: scroll;
+  }
+
+  .hero-section,
+  .about-me,
+  .projects,
+  .skills,
+  .services,
+  footer {
+    margin: 0% 2%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 90px 0px 0px 0px;
+  }
+
+  .hero-section,
+  .about-me,
+  .projects,
+  .skills,
+  .services,
+  footer {
+    margin: 0px 6%;
+  }
+
+  h1 {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    padding: 90px 0px 0px 0px;
+  }
+
+  .hero-section,
+  .about-me,
+  .projects,
+  .skills,
+  .services,
+  footer {
+    margin: 0% 10%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1520px) {
+  body {
+    padding: 90px 0px 0px 0px;
+  }
+
+  .hero-section,
+  .about-me,
+  .projects,
+  .skills,
+  .services,
+  footer {
+    margin: 0% 10%;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    padding: 90px 0px 0px 0px;
+  }
+
+  .hero-section,
+  .about-me,
+  .projects,
+  .skills,
+  .services,
+  footer {
+    margin: 0% 10%;
+  }
+
+  h1 {
+    font-size: 84px;
+  }
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.0375em;
+}
+
+h3 {
+  letter-spacing: -0.03em;
+}
+
+p {
+  line-height: 1.5;
+  max-width: 70ch;
+}
+
+.icon {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
