@@ -299,11 +299,13 @@
             <span>Want to Partner Up?</span>
             Reach Me with a Click
           </h2>
-          <a class="message-button"href="tel:+4551460043">
+          <a class="message-button"href="tel:+919834481168">
             <span class="material-symbols-rounded chat-icon icon" translate="no">
               phone
             </span>
-            +45 51 46 00 43
+            
+            +919834481168
+        
           </a>
         </div>
         <hr>
@@ -312,12 +314,12 @@
             Connect
           </h3>
           <div class="connect-section">
-            <a id="copyEmailButton" class="email" href="mailto:davideniola108@gmail.com"> 
+            <a id="copyEmailButton" class="email" href="mailto:digitalvibe27gnd@gmail.com"> 
                 <span class="material-symbols-rounded icon email-icon" translate="no">
                   mail
                 </span>
                 <h4>
-                  davideniola108@gmail.com
+                  digitalvibe27gnd@gmail.com
                 </h4>
             </a>
             <section class="social-section">
@@ -337,9 +339,27 @@
           </div>
         </div>
         <p>
-          Copyright © <span id="year"></span> David Olaniyan. All rights reserved.
+          Copyright © <span id="year"></span> <digitalvibe class="site"></digitalvibe>. All rights reserved.
         <p>
       </section>
-    </footer>
+    </footer><?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+    
+        $to = "digitalvibe27gnd@gmail.com"; // Updated Email
+        $subject = "New Contact Form Message from " . $name;
+        $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
+        $headers = "From: $email";
+    
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Message sent successfully!";
+        } else {
+            echo "Error sending message.";
+        }
+    }
+    ?    
   </body>
 </html>
